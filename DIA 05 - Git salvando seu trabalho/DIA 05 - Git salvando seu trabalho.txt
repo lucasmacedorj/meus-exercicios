@@ -1,0 +1,7 @@
+Git → a "máquina do tempo" que rastreia mudanças no seu código
+
+git init → liga o Git numa pasta
+git add . → seleciona os arquivos pra incluir no próximo commit
+git commit -m "..." → tira a "fotografia" com uma mensagem descritiva
+git remote add origin ... → conecta sua pasta local ao repositório no GitHub
+git push → envia os commits pra nuvem
