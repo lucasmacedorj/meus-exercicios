@@ -1,0 +1,32 @@
+PASSO 1: PREPARAR OS ITENS QUE SERÃO USADOS PARA MONTAR O SANDUÍCHE
+PASSO 2: PEGAR O PÃO E SEPARAR EM DUAS PARTES IGUAIS
+PASSO 3: PASSAR A MAIONESE EM AMBAS AS PARTE DO PÃO
+PASSO 4: EM UMA PARTE DO PÃO, COLOCAR A PROTEINA A SER USADA: CARNE, FRANGO OU ALGUMA OUTRA OPÇÃO A GOSTO
+PASSO 5: ADICIONAR A SALADA JÁ TEMPERADA A GOSTO DO CLIENTE [ALFACE, TOMATE, CEBOLA, PIMENTÃO, PICLES]
+PASSO 6: ADICIONAR OS MOLHOS ESCOLHIDOS: [MAIONESE, KETCHUP, MOLHO AGRIDOCE DENTRE OUTROS]
+PASSO 7: FECHAR O SANDUÍCHE COM A OUTRA PARTE DO PÃO E FINALIZAR O SANDUÍCHE
+
+ORIENTAÇÕES DO CLAUDE: 
+
+Vamos passo a passo onde teve vagueza:
+
+PASSO 1 — "Preparar os itens" é muito genérico. Preparar como? Quais itens exatamente? Um algoritmo precisa listar as entradas (inputs) de forma explícita: quantidades, tipos, etc. Ex: "Separar 2 fatias de pão, 100g de proteína escolhida, maionese, saladas e molhos selecionados."
+
+PASSO 2 — "Separar em duas partes iguais" não diz como. É um corte no meio (tipo borboleta)? Duas fatias separadas de um pão de forma? Isso muda a execução completamente.
+
+PASSO 3 — "Passar a maionese" — quanto? Uma colher? Uma camada fina? Sem quantidade, cada execução do algoritmo dá um resultado diferente.
+
+PASSO 4 — Aqui você já foi bem específico com as opções (carne, frango...), mas falta a quantidade e se a proteína já vem pronta (cozida) ou precisa de um passo de preparo antes (esse preparo nem foi mencionado no Passo 1!).
+
+PASSO 5 — "Salada já temperada a gosto do cliente" — dois problemas:
+
+"Já temperada" pressupõe um passo anterior que não existe no algoritmo (quando e como temperou?)
+"A gosto do cliente" é uma decisão condicional (se/então) escondida dentro de uma instrução. Um algoritmo formal precisaria tratar isso como uma escolha explícita: "perguntar ao cliente quais itens da salada deseja, dentre as opções: [...]"
+
+PASSO 6 — Mesmo problema do 5: "molhos escolhidos" pressupõe uma escolha que nunca foi capturada como decisão no algoritmo. E de novo, faltam quantidades.
+
+PASSO 7 — Esse está OK, mas "finalizar o sanduíche" é redundante — fechar com a outra parte do pão já é o fim, então essa frase não agrega uma ação nova.
+
+O padrão geral do problema:
+
+Você descreveu o que fazer, mas quase sempre pulou quanto, como exatamente e quem decide o quê. Em programação, isso vira exatamente os bugs mais comuns: variáveis sem valor definido, decisões (if) que o código não trata, e funções que dependem de um "preparo" que nunca foi implementado.
