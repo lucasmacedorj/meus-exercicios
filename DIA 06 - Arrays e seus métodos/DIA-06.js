@@ -31,7 +31,7 @@ Pensa assim: "pra cada item da lista, testa uma condição (true/false), e só m
 
 O que aconteceu: o filter testou cada número (gol >= 20), e só manteve os que deram true (25 e 22). Os que deram false (10, 7, 15) foram descartados.
 
-Quando usar filter: quando você quer selecionar apenas alguns itens de uma lista, baseado numa condição. Ex: pegar só os jogadores artilheiros, só os produtos em estoque, só os números pares.
+Quando usar filter: quando você quer selecionar apenas alguns itens de uma lista, baseado numa condição. Ex: pegar só os jogadores artilheiros, só os produtos em estoque, só os números pares. 
 
 let gols = [30,36,52,56,58,47,96,10,36,20,2,3,7,9,5,]
 
@@ -100,5 +100,43 @@ let artilharia = gols.find(function(gol){
     return gol >= 30
 })
 
-console.log(artilharia) */ 
+console.log(artilharia) 
+
+
+map	Array - (mesma quantidade) -Transformar cada item
+filter - Array (igual ou menor)	- Selecionar vários itens
+reduce - Um valor único - Resumir/juntar tudo
+forEach - Nada (undefined) - Executar uma ação repetida
+find - Um item único (ou undefined) - Encontrar o primeiro que bate com a condição
+
+
+*/ 
+
+/* Exercício: dada uma lista de produtos com preço, use filter pra pegar os acima de R$100 e map pra aplicar 10% de desconto. Checkpoint: você sabe explicar a diferença entre map e filter . */
+
+let produtos = [
+    {nome: "Headset", preco: 250},
+    {nome: "Iphone 17 PRO MAX", preco: 7500},
+    {nome: "Monitor de 32º", preco: 2000},
+    {nome: "Teclado", preco: 100},
+    {nome: "Processador Intel", preco: 5000}
+]
+
+// filter
+
+ /* let maiorProduto = produtos.filter(function(produto){
+    return produto.preco > 1000
+})
+
+console.log(maiorProduto) */ 
+
+// map 
+
+/* let desconto = produtos.map(function(desc){
+    return {nome: desc.nome, preco: desc.preco - (desc.preco * 10 / 100)}
+})
+
+console.log(desconto) */ 
+
+
 
