@@ -124,19 +124,19 @@ let produtos = [
 
 // filter
 
- /* let maiorProduto = produtos.filter(function(produto){
+  let maiorProduto = produtos.filter(function(produto){
     return produto.preco > 1000
 })
 
-console.log(maiorProduto) */ 
+console.log(maiorProduto) 
 
 // map 
 
-/* let desconto = produtos.map(function(desc){
+let desconto = maiorProduto.map(function(desc){
     return {nome: desc.nome, preco: desc.preco - (desc.preco * 10 / 100)}
 })
 
-console.log(desconto) */ 
+console.log(desconto) 
 
 
 
