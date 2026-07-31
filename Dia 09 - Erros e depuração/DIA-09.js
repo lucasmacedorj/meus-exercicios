@@ -54,5 +54,5 @@ if (idadeUsuario === idadeMinima) {
   console.log("Acesso negado")
 }
  
-//acredito que o erro esteja nessa questão de ter a idade como string e outra como inteiro pq mesmo aparentemente tendo um valor igual eles são tipos diferentes e pode causar confusões futuramente. Correção: if (idadeUsuario === Number(idadeMinima))
+/*acredito que o erro esteja nessa questão de ter a idade como string e outra como inteiro pq mesmo aparentemente tendo um valor igual eles são tipos diferentes e pode causar confusões futuramente. Correção: if (idadeUsuario === Number(idadeMinima)) */
 
