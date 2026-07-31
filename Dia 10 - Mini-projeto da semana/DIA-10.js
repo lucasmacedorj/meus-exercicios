@@ -21,10 +21,12 @@ let chamadosFechados = chamados.filter(function(fechados){
 })
 
 
-//console.log(chamadosAbertos)
+console.log(chamadosAbertos)
 //console.log(chamadosFechados)
 
 console.log(chamadosAbertos.length)
 console.log(chamadosFechados.length)
+
+console.log(chamadosAbertos)
 
 
