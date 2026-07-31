@@ -70,7 +70,7 @@ console.log(data1 < data2) */
 
 /* Exercício: escreva uma função que recebe um nome completo e retorna as iniciais em maiúsculo */ 
 
-
+/*
 let nome = "leandro lucas macedo dos santos"
 let palavras = nome.split(" ")
 
@@ -81,7 +81,19 @@ let resultado = palavras.map(function(palavra){
 })
 
 console.log(resultado) 
-console.log(resultado.join(""))
+console.log(resultado.join("")) */
+
+function pegarIniciais(nomeCompleto) {
+
+    let palavras = nomeCompleto.split(" ")
+
+    let resultado = palavras.map(function(palavra){
+    return palavra[0].toLocaleUpperCase()
+    })
+    return resultado.join("")
+}
+
+console.log(pegarIniciais("rosangela maria macedo dos santos"))
 
 
 
