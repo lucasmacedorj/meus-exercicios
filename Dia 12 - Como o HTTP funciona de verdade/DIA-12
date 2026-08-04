@@ -1,0 +1,35 @@
+Os métodos HTTP — "o que eu quero fazer"
+
+Cada requisição (pedido) que o navegador manda tem um método, que indica a intenção daquela ação:
+
+GET — "me dá uma informação"
+GET /chamados/42
+
+Você está pedindo pra ler alguma coisa, sem mudar nada no servidor. Ex: abrir uma página, carregar a lista de chamados, ver o perfil de um usuário.
+
+POST — "quero criar algo novo"
+POST /chamados
+
+Você está enviando dados pra criar um novo registro. Ex: abrir um novo chamado de suporte, criar uma conta, enviar um formulário.
+
+PUT — "quero atualizar algo que já existe"
+PUT /chamados/42
+
+Você está substituindo/atualizando um registro já existente. Ex: editar o status de um chamado de "Aberto" pra "Resolvido".
+
+DELETE — "quero apagar algo"
+DELETE /chamados/42
+
+Bem direto: remove um registro. Ex: excluir um chamado, deletar uma conta.
+
+EXERCICÍO: 
+
+400 Bad Request - Algo que pode exemplificar esse erro é quando uma franquia nos envia a planilha de criação de usuário e nós identificamos que está faltando alguma informação como razão social da empresa ou quando mandam e-mail com dominío genérico. 
+
+401 Unauthorized - Pode ocorrer quando um usuário tem sua sessão expirada do Jadlog Pulse e precisa se autenticar para acessar o sistema. 
+
+403 Forbidden - Pode ocorre quando um usuário comum do Pulse tenta acessar funções com privilégios de administrador. 
+
+404 Not Found - Ocorre quando um usuário tenta acessar um link de acesso ao Pulse que está expirado. 
+
+500 Internal Server Error - Acredito que esse tipo de erro se assemelhe a quando tentamos colocar um número de CTE na barra de pesquisas e não aparece nenhuma informação. 
