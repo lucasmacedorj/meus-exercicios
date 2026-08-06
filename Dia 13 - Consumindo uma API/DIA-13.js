@@ -39,7 +39,5 @@ buscarPokemon("pikachu");
 
 
 
- /* exercício
-
-Objetivo: buscar dados de um Pokémon (ou outra API pública, se preferir) e imprimir 3 campos específicos dele, de forma legível. */ 
+ 
 
