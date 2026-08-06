@@ -14,7 +14,7 @@ rejected (rejeitada) | Terminou com erro, algo deu errado
 
 */ 
 
-function buscarUsuario() {
+/* function buscarUsuario() {
     return new Promise(function(resolve){
         setTimeout(function(){
             resolve ({nome: "Leandro", idade: 27})
@@ -22,7 +22,7 @@ function buscarUsuario() {
     })
 }
 
-async function mostrarUsuario(){
+ async function mostrarUsuario(){
     console.log("Buscando usuário ... ")
 
     let usuario = await buscarUsuario()
@@ -31,7 +31,33 @@ async function mostrarUsuario(){
 }
 
 mostrarUsuario()
-console.log("Esse código aparece depois")
+console.log("Esse código aparece depois") */
+
+/* function carregarDados() {
+    return new Promise(function(resolve,rejected){
+        console.log("Estamos carregando os dados ... ")
+        setTimeout(function(){
+            let certoErrado = false
+
+            if (certoErrado) {
+                resolve("Deu certo no carregamento ")
+            } else {
+                rejected("Deu errado ao carregar")
+            }
+        }, 2000)
+    
+    })
+}
+
+carregarDados().then(function(resposta){
+    console.log(resposta)
+}).catch(function(resposta) {
+    console.log(resposta)
+})
+
+*/
+
+
 
 
 
