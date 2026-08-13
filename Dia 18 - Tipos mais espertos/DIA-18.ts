@@ -44,14 +44,30 @@ interface Chamado {
 Exercício: tipe uma função que aceita um id que pode ser
 número ou texto. 
 
-*/
-
-
 
 function buscaPorId(id: number | string) {
     console.log("Buscando por ID " + id)
 }
 
 buscaPorId("15")
+
+*/
+
+/* Exercício: Calculadora com union type
+
+Objetivo: criar uma função que recebe dois valores (que podem ser number ou string), e retorna a soma dos dois — mas com um detalhe importante pra pensar. */ 
+
+function somar(a: number | string, b: number | string ) {
+
+    let numeroA = Number(a)
+    let numeroB = Number(b)
+
+    let resultado = numeroA + numeroB
+
+    console.log("O Resultado da soma entre: " + numeroA + " e " + numeroB + " é: " + resultado)
+
+}
+
+somar("30",75)
 
 
