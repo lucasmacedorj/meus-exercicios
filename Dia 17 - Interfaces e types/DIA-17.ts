@@ -4,7 +4,7 @@ vamos usar exatamente o exemplo do chamado de suporte que você já criou lá no
 
 
 */
-
+/*
 interface Chamado {
     id: number,
     titulo: string,
@@ -15,9 +15,30 @@ let chamado: Chamado = {
     id: 1,
     titulo: "Erro ao acessar o Pulse",
     status: "Resolvido"
-};
+}; */
 
 /* Exercício: crie uma interface
-para uma entidade do produto e uma função tipada que a recebe.  */
+para uma entidade do produto e uma função tipada que a recebe.  
+
+interface Chamado {
+    id: number;
+    titulo: string
+    status: string;
+    prioridade: string;
+}
+
+let exemplo: Chamado = {
+    id: 1,
+    titulo: "Erro no pulse",
+    status: "Fechado",
+    prioridade: "Alta"
+}
+
+function exibirChamado(chamado: Chamado) {
+    console.log("ID: " + chamado.id + " | Título: " + chamado.titulo + " | Status: " + chamado.status + " | Prioridade: " + chamado.prioridade)
+}
+
+exibirChamado(exemplo)  */
+
 
 
