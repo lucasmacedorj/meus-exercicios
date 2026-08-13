@@ -40,5 +40,32 @@ function exibirChamado(chamado: Chamado) {
 
 exibirChamado(exemplo)  */
 
+//Criando a Interface
 
+interface Cliente {
+    id: number,
+    nome: string,
+    email: string,
+    ativo: boolean
+}
+
+//Criando o objeto
+
+let cliente1: Cliente = {
+    id: 3697,
+    nome: "Thiago",
+    email: "thiago@!gmail.com",
+    ativo: false,
+}
+
+function verificarStatusCliente(cliente: Cliente) {
+    
+    if (cliente.ativo === true) {
+        console.log("Cliente: " + cliente.nome + " ESTÁ ATIVO !! ")
+    } else {
+        console.log("Cliente: " + cliente.nome + " NÃO ESTÁ ATIVO ")
+    }
+}
+
+verificarStatusCliente(cliente1)
 
