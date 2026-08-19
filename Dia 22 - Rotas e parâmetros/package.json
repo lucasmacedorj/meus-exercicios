@@ -1,0 +1,15 @@
+{
+  "name": "dia-22---rotas-e-parâmetros",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "hono": "^4.13.3"
+  }
+}
