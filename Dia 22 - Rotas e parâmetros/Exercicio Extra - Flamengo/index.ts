@@ -39,7 +39,7 @@ app.get('/jogadores/:id', (c) => {
 app.get('/jogadores/posicao/:posicao', (d) => {
     
     const posicao = d.req.param('posicao')
-    const posicaoJogador = jogadores.find((item) => item.posicao === posicao)
+    const posicaoJogador = jogadores.filter((item) => item.posicao === posicao)
 
     if(posicaoJogador) {
         return d.json(posicaoJogador)
