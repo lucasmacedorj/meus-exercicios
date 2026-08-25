@@ -44,7 +44,7 @@ export default app
 
 
 // PUT — Atualizando um registro existente
-
+/* 
 import { Hono } from "hono";
 
 const app = new Hono
@@ -73,6 +73,40 @@ app.put('/chamados/:id', async (c) => {
         return c.json(chamado)
     } else {
         return c.text('Chamado não encontrado', 404)
+    }
+})
+
+export default app */
+
+// ----------------------------------------------------------------- 
+
+// DELETE - 
+
+import { Hono } from "hono";
+
+const app = new Hono()
+
+interface Chamado {
+    id: number;
+    titulo: string;
+    status: string
+}
+
+let chamados: Chamado[] = [
+    {id: 1, titulo: "Erro ao acessar o sistema", status: "Aberto"},
+    {id: 2, titulo: "Lentidão ao emitir relatório", status: "Fechado"},
+    {id: 3, titulo: "Usuário não encontrado", status: "Fechado"}
+]
+
+app.delete('/chamados/:id', (c) => {
+    const id = c.req.param('id')
+    const index = chamados.findIndex((item) => item.id === Number(id))
+
+    if(index !== -1) {
+        chamados.splice(index, 1)
+        return c.text('Chamado removido com sucesso!')
+    } else {
+        return c.text('Chamado não encontrado ', 404)
     }
 })
 
