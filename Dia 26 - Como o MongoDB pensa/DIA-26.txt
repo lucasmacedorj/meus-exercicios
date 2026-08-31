@@ -1,0 +1,32 @@
+Coleção: chamados
+
+Documento 1: 
+{
+  "_id": "65f1a001",
+  "titulo": "Erro ao acessar o sistema",
+  "status": "Aberto"
+}
+
+Documento 2:
+{
+  "_id": "65f1a002",
+  "titulo": "Lentidão ao emitir relatório",
+  "status": "Fechado"
+}
+
+Documento 3:
+{
+  "_id": "65f1a003",
+  "titulo": "Erro ao gerar etiqueta",
+  "status": "Aberto",
+  "prioridade": "Alta"
+}
+
+Documento 4:
+{
+  "_id": "65f1a004",
+  "titulo": "Usuário não encontrado",
+  "status": "Resolvido",
+  "prioridade": "Média",
+  "dataResolucao": "2026-08-20"
+}
