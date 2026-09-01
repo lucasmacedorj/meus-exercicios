@@ -1,0 +1,15 @@
+{
+  "name": "dia-27---operações-básicas-no-banco",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "mongodb": "6.21.0"
+  }
+}
