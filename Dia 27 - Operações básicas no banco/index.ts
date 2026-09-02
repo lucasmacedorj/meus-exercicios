@@ -10,15 +10,33 @@ async function main() {
     await client.connect()
     console.log("Conectado ao MongoDB com sucesso!")
 
-    const db = client.db("meubanco")
+    const db = client.db("meubanco")  
     const colecao = db.collection("chamados")
 
-    const resultado = await colecao.insertOne({
+    // InsertIOne insere somente um item
+
+     /* const resultado = await colecao.insertOne({
       titulo: "Erro ao acessar o sistema",
       status: "Aberto"
-    })
+    }) */ 
 
-    console.log("Documento inserido com id:", resultado.insertedId)
+  // insertMany adiciona mais de um documento ou item
+
+   const resposta = await colecao.insertMany([
+    {titulo: "Erro ao redefinir a senha", status: "Fechado"},
+    {titulo: "Travamentos e lentidões", status: "Aberto"},
+    {titulo: "Erro em relatório", status: "Em andamento"}
+   ])
+
+   // Pega os Ids que acabaram de ser criados
+    const idsInseridos = Object.values(resposta.insertedIds)
+
+    //Busca só esses documentos específicos 
+    const chamadosInseridos = await colecao.find({
+      _id: {$in: idsInseridos}
+    }).toArray()
+
+    console.log("Os 3 chamados que acabei de inserir: ", chamadosInseridos)
 
   } finally {
     await client.close()
