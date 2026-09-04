@@ -1,0 +1,16 @@
+{
+  "name": "dia-30---projeto-api-de-chamados-completa",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "hono": "^4.13.5",
+    "mongodb": "6.21.0"
+  }
+}
