@@ -7,6 +7,10 @@ export const chamadosRoutes = new Hono()
 chamadosRoutes.post('/', async (c) => {
     const corpo = await c.req.json()
 
+    if(!corpo.titulo) {
+        return c.text('O campo "título" é obrigatório', 400)
+    }
+
     const db = await conectarBanco()
     const colecao = db.collection("chamados")
 
@@ -31,3 +35,15 @@ chamadosRoutes.get('/', async (c) => {
 
         return c.json(chamados)
     })
+
+chamadosRoutes.get('/status/:status', async (c) => {
+    const status = c.req.param('status')
+
+    const db = await conectarBanco()
+    const colecao = db.collection("chamados")
+
+    const chamadosFiltrados = await colecao.find({status: status}).toArray()
+
+    return c.json(chamadosFiltrados)
+    
+})    
