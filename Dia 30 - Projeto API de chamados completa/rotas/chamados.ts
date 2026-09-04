@@ -72,3 +72,10 @@ return c.text('Chamado atualizado com sucesso! ')
 
 })
 
+chamadosRoutes.delete('/id/:id', async (c) => {
+
+    const id = c.req.param('id')
+    
+
+})
+
