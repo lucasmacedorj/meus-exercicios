@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { conectarBanco } from "../db";
-import { ExitStatus } from "typescript";
+import { ObjectId } from "mongodb";
 
 export const chamadosRoutes = new Hono()
 
@@ -47,3 +47,20 @@ chamadosRoutes.get('/status/:status', async (c) => {
     return c.json(chamadosFiltrados)
     
 })    
+
+chamadosRoutes.put('/id/:id', async (c) => {
+
+    const corpo = await c.req.json()
+    const id = c.req.param('id')
+    
+    const db = await conectarBanco()
+    const colecao = db.collection("chamados")
+
+    await colecao.updateOne(
+  { _id: new ObjectId(id) },
+  { $set: { status: corpo.status } }
+)
+
+return c.text('Chamado atualizado com sucesso! ')
+
+})
