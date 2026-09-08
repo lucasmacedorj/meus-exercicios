@@ -39,6 +39,17 @@ chamadosRoutes.get('/status/:status', async (c) => {
 
 })
 
+chamadosRoutes.get('/', async (c) => {
+
+    const db = await conectarBanco()
+    const colecao = db.collection("chamados")
+
+    const chamados  = await colecao.find().toArray()
+
+    return c.json(chamados)
+
+})
+
 chamadosRoutes.get('/id/:id', async (c) => {
     
     const id = c.req.param('id')
@@ -63,9 +74,19 @@ chamadosRoutes.put('/id/:id', async (c) => {
     const db = await conectarBanco()
     const colecao = db.collection("chamados")
 
+    const composParaAtualizar: any = {}
+
+    if (corpo.titulo) {
+        composParaAtualizar.titulo = corpo.titulo
+    }
+    
+    if (corpo.status) {
+        composParaAtualizar.titulo = corpo.status
+    }
+
     await colecao.updateOne(
   { _id: new ObjectId(id) },
-  { $set: { status: corpo.status } }
+  { $set: { titulo: corpo.titulo, status: corpo.status } }
 )
 
 return c.text('Chamado atualizado com sucesso! ')
@@ -83,9 +104,9 @@ chamadosRoutes.delete('/id/:id', async (c) => {
 
     if(deletar.deletedCount === 0) {
         
-        return c.text('Chamado não controado', 404)
+        return c.text('Chamado não encontrado', 404)
     }
 
-    return c.text('Chamados removio com sucesso!')
+    return c.text('Chamado removido com sucesso!')
 })
 

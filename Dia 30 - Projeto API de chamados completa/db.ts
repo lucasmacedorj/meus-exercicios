@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGO_URI as string
+    console.log("Variavél carregada: ", process.env.MONGODB_URI)
+
+const uri = process.env.MONGODB_URI as string
 const client = new MongoClient(uri)
 
 export async function conectarBanco() {
