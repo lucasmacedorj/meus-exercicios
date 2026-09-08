@@ -76,6 +76,16 @@ chamadosRoutes.delete('/id/:id', async (c) => {
 
     const id = c.req.param('id')
     
+    const db = await conectarBanco()
+    const colecao = db.collection("chamados")
 
+    const deletar = await colecao.deleteOne({_id: new ObjectId(id)})
+
+    if(deletar.deletedCount === 0) {
+        
+        return c.text('Chamado não controado', 404)
+    }
+
+    return c.text('Chamados removio com sucesso!')
 })
 
