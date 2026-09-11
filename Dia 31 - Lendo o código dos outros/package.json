@@ -1,5 +1,5 @@
 {
-  "name": "javascript",
+  "name": "dia-31---lendo-o-código-dos-outros",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -8,8 +8,5 @@
   },
   "peerDependencies": {
     "typescript": "^5"
-  },
-  "dependencies": {
-    "hono": "^4.13.5"
   }
 }
