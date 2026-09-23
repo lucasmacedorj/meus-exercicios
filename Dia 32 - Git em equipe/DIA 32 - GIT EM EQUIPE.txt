@@ -1,0 +1,11 @@
+Resumindo o fluxo completo, com os novos termos:
+
+Branch - Uma cópia paralela do código, isolada
+
+Pull Request (PR) - Pedido formal pra juntar sua branch na principal
+
+Code Review	Revisão do seu código por outra pessoa, antes do merge
+
+Merge	O ato de "juntar" uma branch em outra
+
+Conflito de merge	Quando duas mudanças na mesma linha não conseguem ser combinadas automaticamente
