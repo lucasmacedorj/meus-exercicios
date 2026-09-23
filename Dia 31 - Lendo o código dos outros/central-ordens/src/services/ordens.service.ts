@@ -57,7 +57,7 @@ export const ordensService = {
   // Conclui a ordem. Só uma ordem que já está EM ANDAMENTO pode ser concluída.
   async concluir(id: string): Promise<Ordem> {
     const ordem = await this.buscarPorId(id);
-    if (ordem.status !== 'aberta') {
+    if (ordem.status !== 'em_andamento') {
       throw new TransicaoInvalida(ordem.status, 'concluida');
     }
     return ordensRepo.atualizarStatus(id, 'concluida', { concluidaEm: new Date() });
