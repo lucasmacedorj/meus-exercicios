@@ -1,6 +1,8 @@
 // O Mongo guarda o identificador em um campo "_id" do tipo ObjectId.
 // Antes de devolver na resposta JSON, convertemos para uma string "id".
 
+
+// Ajuste temporário: branch de treino do Dia 32
 // Comentário direto na main - vai gerar conflito!
 
 export function serializar<T extends { _id?: unknown }>(
